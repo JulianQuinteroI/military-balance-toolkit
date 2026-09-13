@@ -48,7 +48,7 @@ def abrir(ruta: Path) -> sqlite3.Connection:
     if not ruta.exists():
         raise FileNotFoundError(
             f"No existe la base mb2026 en {ruta}. "
-            "Constrúyela con 'uv run mb2026' en el proyecto holo-mb2026."
+            "Constrúyela con 'uv run mb2026' en la raíz del proyecto."
         )
     conexion = sqlite3.connect(f"file:{ruta}?mode=ro", uri=True)
     conexion.row_factory = sqlite3.Row

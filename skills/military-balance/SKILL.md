@@ -38,7 +38,7 @@ python3 -m mb2026.consulta <orden> [argumentos]
 Requiere `PYTHONPATH` apuntando al paquete (solo usa la biblioteca estándar):
 
 ```bash
-export MB2026_HOME="$HOME/Projects/holo-mb2026"   # donde esté clonado el repo
+export MB2026_HOME="$HOME/Projects/military-balance-toolkit"  # el repo clonado
 export PYTHONPATH="$MB2026_HOME/src"
 python3 -m mb2026.consulta ficha Colombia
 ```

@@ -1,4 +1,4 @@
-# holo-mb2026
+# military-balance-toolkit
 
 Convierte **The Military Balance 2026** del IISS en una base de datos
 consultable, un CLI que responde con cifras y su página, y calcos con
@@ -22,6 +22,14 @@ Un LLM al que se le pregunta cuántos carros de combate tiene un país responde
 de memoria, y suele equivocarse de edición o inventar. Aquí las cifras salen de
 una consulta, conservan las salvedades del editor (`ε` estimado, `†`
 operatividad dudosa) y vienen con el número de página para citarlas.
+
+## Instalación
+
+```bash
+git clone git@github.com:JulianQuinteroI/military-balance-toolkit.git
+cd military-balance-toolkit
+uv sync
+```
 
 ## Requisitos
 
@@ -69,7 +77,7 @@ lectura, así que `sql` no puede modificar nada.
 Sin uv, desde cualquier directorio (el paquete solo usa la biblioteca estándar):
 
 ```bash
-PYTHONPATH=~/Projects/holo-mb2026/src python3 -m mb2026.consulta ficha Colombia
+PYTHONPATH=/ruta/al/repo/src python3 -m mb2026.consulta ficha Colombia
 ```
 
 El skill de Claude Code [`military-balance`](skills/) envuelve todo esto.
