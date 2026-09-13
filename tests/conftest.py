@@ -54,7 +54,7 @@ def json_sintetico(tmp_path: Path) -> Path:
                 [
                     {"type": "heading", "md": "### **Army** 206,400"},
                     {"type": "heading", "md": "### **EQUIPMENT BY TYPE**"},
-                    {"type": "text", "md": "**RECCE** 121 EE-9 *Cascavel*"},
+                    {"type": "text", "md": "**RECCE** 121 XR-9 *Vigía*"},
                     {"type": "footer", "md": "**10 THE MILITARY BALANCE** 2026"},
                     {"type": "heading", "md": "## Borduria BOR"},
                 ],
@@ -120,7 +120,7 @@ def corpus_sintetico_completo(tmp_path: Path) -> Path:
                     {"type": "text", "md": "1 (1st) mech div (2 mech bde)"},
                     {"type": "heading", "md": "### **EQUIPMENT BY TYPE**"},
                     {"type": "heading", "md": "### **ARMOURED FIGHTING VEHICLES**"},
-                    {"type": "text", "md": "**RECCE** 121 EE-9 *Cascavel*"},
+                    {"type": "text", "md": "**RECCE** 121 XR-9 *Vigía*"},
                     {"type": "heading", "md": "## **DEPLOYMENT**"},
                     {"type": "text", "md": "**EGYPT:** MFO 275; 1 inf bn"},
                     {"type": "heading", "md": "## **FOREIGN FORCES**"},

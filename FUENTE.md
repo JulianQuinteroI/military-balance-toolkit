@@ -46,6 +46,24 @@ apropiación; la **selección, redacción y compilación** del IISS sí lo son.
 Este repositorio contiene únicamente **código de extracción**: ni el corpus ni la
 base de datos resultante se versionan.
 
+## Qué contenido derivado del volumen hay en este repositorio
+
+Se documenta para que sea auditable, ya que el repositorio es público:
+
+| Dónde | Qué | Por qué |
+|---|---|---|
+| `tests/test_equipo.py`, `test_unidades.py`, `test_personal.py`, `test_economia.py`, `test_despliegues.py` | Renglones sueltos con la **notación** del volumen (`**IFV** 60: 28 …; 32 …`) y designaciones de material de fabricante | Son el formato de entrada que el parser debe saber leer. Sin ellos no se puede probar que lo hace, ni detectar una regresión cuando cambie la edición. |
+| `tests/test_validacion_corpus.py` | ~15 cifras de Colombia (efectivos por fuerza, presupuesto, inventario conocido) | Es el contraste contra el impreso que demuestra que la extracción es fiel. Solo se ejecuta si el corpus real está disponible. |
+| `src/mb2026/consulta/catalogo.py` | Los 174 códigos de país del IISS | Sirve para que los tests comprueben que ningún alias apunta a un código inexistente. |
+| `src/mb2026/parsers/estructura.py`, `simbologia/diccionario.py` | Nombres de dominio del inventario y siglas de escalón | Vocabulario necesario para interpretar la fuente. |
+| `README.md` | Tres cifras de Colombia, citadas | Ilustran qué devuelve la herramienta. |
+
+No hay tablas, figuras, mapas ni prosa del volumen. Los fixtures compartidos
+usan material sintético; los que conservan notación real están donde esa
+notación es lo que se prueba. Las cifras son hechos, que no son objeto de
+apropiación; la selección, redacción y compilación del IISS sí lo son, y no se
+reproducen.
+
 ## Marcas de incertidumbre del IISS
 
 El parser preserva las marcas de juicio del editor. Descartarlas convierte

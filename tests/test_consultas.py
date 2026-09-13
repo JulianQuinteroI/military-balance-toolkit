@@ -71,7 +71,7 @@ class TestCorrelacion:
 
 class TestBuscarSistema:
     def test_encuentra_por_texto_parcial(self, base):
-        filas = _filas(consultas.buscar_sistema(base, "EE-9"), "EE-9")
+        filas = _filas(consultas.buscar_sistema(base, "XR-9"), "XR-9")
         assert filas and filas[0][0] == "Ruritania"
 
     def test_sin_resultados_no_falla(self, base):

@@ -40,7 +40,7 @@ class TestOrdenes:
         assert "RECCE" in salida.out
 
     def test_sistema(self, base, capsys):
-        codigo, salida = _correr(base, "sistema", "EE-9", capsys=capsys)
+        codigo, salida = _correr(base, "sistema", "XR-9", capsys=capsys)
         assert codigo == 0
         assert "Ruritania" in salida.out
 
@@ -57,7 +57,7 @@ class TestOrdenes:
     def test_inventario(self, base, capsys):
         codigo, salida = _correr(base, "inventario", "RUR", capsys=capsys)
         assert codigo == 0
-        assert "EE-9" in salida.out
+        assert "XR-9" in salida.out
 
     def test_ranking(self, base, capsys):
         codigo, salida = _correr(base, "ranking", "latam", capsys=capsys)

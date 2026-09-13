@@ -27,7 +27,7 @@ class TestCargarItems:
 
     def test_limpia_el_markdown_pero_preserva_el_crudo(self, json_sintetico):
         recce = next(i for i in cargar_items(json_sintetico) if "RECCE" in i.texto)
-        assert recce.texto == "RECCE 121 EE-9 Cascavel"
+        assert recce.texto == "RECCE 121 XR-9 Vigía"
         assert "**RECCE**" in recce.md
 
     def test_calcula_el_nivel_de_los_encabezados(self, json_sintetico):
@@ -48,7 +48,7 @@ class TestCargarItems:
 
     def test_expone_los_renglones_con_el_markdown_intacto(self, json_sintetico):
         recce = next(i for i in cargar_items(json_sintetico) if "RECCE" in i.texto)
-        assert recce.lineas_md == ("**RECCE** 121 EE-9 *Cascavel*",)
+        assert recce.lineas_md == ("**RECCE** 121 XR-9 *Vigía*",)
 
     def test_falla_con_ruta_inexistente(self, tmp_path):
         with pytest.raises(FileNotFoundError):
