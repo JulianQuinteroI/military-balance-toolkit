@@ -1,0 +1,58 @@
+[project]
+name = "mb2026"
+version = "0.3.0"
+description = "Extrae The Military Balance 2026 (IISS) a SQLite, lo consulta con cita de página y genera calcos APP-6D"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    { name = "Julián Quintero" }
+]
+keywords = ["iiss", "military-balance", "orbat", "app-6d", "defence", "sqlite"]
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+mb2026 = "mb2026.cli:main"
+mb = "mb2026.consulta.cli:main"
+
+[tool.ruff]
+line-length = 92
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "S", "UP", "SIM", "PERF", "RUF", "TRY", "FBT", "PLR"]
+ignore = [
+    # El corpus del IISS usa apóstrofe curvo y viñeta: los regex deben
+    # coincidir con el carácter Unicode real, no con su equivalente ASCII.
+    "RUF001",
+    "RUF002",
+    "RUF003",
+    # Los mensajes de error descriptivos son deliberados: las reglas del
+    # proyecto piden fallar con un mensaje claro en los límites del sistema.
+    "TRY003",
+]
+
+[tool.ruff.lint.per-file-ignores]
+# E501: varios fixtures reproducen renglones del volumen tal cual; partirlos
+# cambiaría lo que se está probando.
+"tests/*" = ["S101", "PLR2004", "PLR0913", "E501"]
+# Solo interpola listas de marcadores posicionales; ver la cabecera del módulo.
+"src/mb2026/consulta/consultas.py" = ["S608"]
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+files = ["src/mb2026"]
+
+[build-system]
+requires = ["uv_build>=0.11.8,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=2.3.1",
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.16.7",
+]

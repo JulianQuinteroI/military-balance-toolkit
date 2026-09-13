@@ -1,0 +1,24 @@
+# Corpus fuente y base derivada — NUNCA versionar.
+# El volumen del IISS tiene todos los derechos reservados; este repositorio
+# contiene solo el código de extracción. Ver FUENTE.md.
+corpus/
+data/
+*.sqlite
+*.sqlite3
+
+# Salidas de trabajo
+simbolos/
+*.orbat.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+
+# Herramientas
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
